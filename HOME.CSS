@@ -1,0 +1,13 @@
+#wname {
+    font-family: fantasy;
+}
+
+.navigation {
+    background-color: black;
+}
+
+.navigation li {
+    float: right;
+}
+
+.navigation li a {}
