@@ -11,6 +11,42 @@ body {
   font-family: 'Roboto Slab', serif;
   scroll-behavior: smooth;
 }
+
+/*-------- heading part------*/
+.heading{
+  background-color:  #C1B086;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;;
+  flex-flow: column;
+  min-height: 20rem;
+}
+
+.heading h3{
+  font-size: 4rem;
+  color:white;
+  text-transform: capitalize;
+}
+
+.heading p a{
+  font-size: 2rem;
+  color: rgb(14, 14, 92) ;
+}
+
+.heading p span{
+  font-size: 2rem;
+  color:white;
+}
+
+.heading p a:hover{
+  color:rgb(14, 14, 92);
+}
+
+/*--------heading part-------*/
+
+
 .logo{
   color: #fff;
   font-size: 50px;
@@ -279,7 +315,7 @@ input {
 }
 
 .contact .row form{
-  border:var(--border);
+  border:2rem rgb(14, 14, 92);
   flex:1 1 40rem;
   padding:2rem;
   text-align: center;
@@ -287,17 +323,17 @@ input {
 
 .contact .row form h3{
   font-size: 2.5rem;
-  color:var(--black);
+  color:#263760;
   text-transform: capitalize;
   margin-bottom: 1rem;
 }
 
 .contact .row form .box{
   width: 100%;
-  border:var(--border);
+  border:2rem rgb(14, 14, 92);
   padding:1.4rem;
   font-size: 1.8rem;
-  color:var(--black);
+  color:#263760;
   margin:.5rem 0;
 }
 
@@ -308,6 +344,139 @@ input {
 
 
 /*-----------contact page---------*/
+
+/*----------room page----------*/
+.title{
+  text-align: center;
+  font-size: 30px;
+  color: #3f9cc1;
+}
+
+.products .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 33rem);
+  gap:1.5rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.products .box-container .box{
+  position: relative;
+  border:var(--border);
+  padding:2rem;
+  overflow: hidden;
+}
+
+.products .box-container .box .fa-eye{
+  position: absolute;
+  top:1rem;
+  display: block;
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.3rem;
+  font-size: 2rem;
+  border:2rem black;
+  background-color: white;
+  cursor: pointer;
+  color:black;
+  text-align: center;
+}
+
+.products .box-container .box .fa-eye{
+  left: -10rem;
+}
+
+.products .box-container .box:hover .fa-eye{
+  left: 1rem;
+}
+
+.products .box-container .box .fa-eye:hover{
+  background-color: black;
+  color:white;
+}
+
+.products .box-container .box img{
+  height: 25rem;
+  width: 100%;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.products .box-container .box .cat{
+  font-size: 1.7rem;
+  color:rgb(14, 14, 92);
+}
+
+.products .box-container .box .cat:hover{
+  color: rgb(226, 226, 22);
+}
+
+.products .box-container .box .name{
+  font-size: 2rem;
+  margin:1rem 0;
+  color:black;
+}
+
+.products .box-container .box .flex{
+  display: flex;
+  align-items: center;
+  gap:1rem;
+}
+
+.products .box-container .box .flex .price{
+  margin-right: auto;
+  font-size: 2.5rem;
+  color:black;
+}
+
+.products .box-container .box .flex .price span{
+  font-size: 1.8rem;
+  color:rgb(14, 14, 92);
+}
+
+.products .box-container .box .flex .qty{
+  padding:1rem;
+  font-size: 1.8rem;
+  border: 2rem rgb(14, 14, 92);
+  color:white;
+  width: 7rem;
+}
+
+.products .box-container .box .flex .fa-edit{
+  width: 5rem;
+  background-color: var(--yellow);
+  color:var(--black);
+  cursor: pointer;
+  height: 4.5rem;
+  font-size: 2rem;
+  border:var(--border); 
+}
+
+.products .box-container .box .flex .fa-edit:hover{
+  background-color: var(--black);
+  color:var(--white);
+}
+
+.products .box-container .box .sub-total{
+  margin-top: 1rem;
+  font-size: 1.7rem;
+  color:var(--light-color);
+}
+
+
+
+.products .more-btn a{
+  margin-top: 2rem;
+  color: white;
+  text-align: center;
+  background-color: #C1B086;
+}
+.products .more-btn a:hover{
+  color: rgb(14, 14, 92);
+}
+/*---------room paage--------*/
+
+
 /*--------------about--------*/
 .top {
   margin-top: 10%;
