@@ -711,3 +711,7 @@ footer li:hover {
     flex-direction: column-reverse;
   }
 }
+footer{
+  color: white;
+  background-color: black;
+}
