@@ -12,8 +12,8 @@ body {
   scroll-behavior: smooth;
 }
 
-/*-------- heading part------*/
-.heading{
+/*-------- headingroom part------*/
+.headingroom{
   background-color:  #C1B086;
   text-align: center;
   display: flex;
@@ -24,23 +24,23 @@ body {
   min-height: 20rem;
 }
 
-.heading h3{
+.headingroom h3{
   font-size: 4rem;
   color:white;
   text-transform: capitalize;
 }
 
-.heading p a{
+.headingroom p a{
   font-size: 2rem;
   color: rgb(14, 14, 92) ;
 }
 
-.heading p span{
+.headingroom p span{
   font-size: 2rem;
   color:white;
 }
 
-.heading p a:hover{
+.headingroom p a:hover{
   color:rgb(14, 14, 92);
 }
 
