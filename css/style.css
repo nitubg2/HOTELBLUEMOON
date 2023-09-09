@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&display=swap');
+ 
+
+:root{
+  
+  --border:.2rem solid var(--black);
+}
 
 * {
   padding: 0;
@@ -49,7 +55,7 @@ body {
 
 .logo{
   color: #fff;
-  font-size: 50px;
+  font-size: 30px;
 }
 li {
   list-style: none;
@@ -348,13 +354,48 @@ input {
 
 
 /*-----------contact page---------*/
-
-/*----------room page----------*/
-.title{
+/*---------- gallery page--------*/
+.reviews .slide{
+  margin-bottom: 4rem;
+  border: 1.2rem solid rgb(14, 14, 92);
   text-align: center;
-  font-size: 30px;
-  color: #3f9cc1;
+  margin: 5rem;
 }
+
+.reviews .slide img{
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.reviews .slide p{
+  padding:1rem 0;
+  line-height: 2;
+  font-size: 1.6rem;
+  color:rgb(14, 14, 92);
+}
+
+.reviews .slide .stars{
+  margin-top: .5rem;
+}
+
+.reviews .slide .stars i{
+  font-size:1.7rem;
+  color:yellow;
+}
+
+.reviews .slide h3{
+  font-size: 2rem;
+  color:rgb(14, 14, 92);
+  margin-top: 1.5rem;
+}
+.button{
+  display: flex;
+}
+/*-----------gallery page--------*/
+/*----------room page----------*/
+
 
 .products .box-container{
   display: grid;
@@ -379,10 +420,10 @@ input {
   width: 4.5rem;
   line-height: 4.3rem;
   font-size: 2rem;
-  border:2rem black;
-  background-color: white;
+  border:2rem rgb(14, 14, 92);
+  background-color: rgb(14, 14, 92);
   cursor: pointer;
-  color:black;
+  color:#C1B086;
   text-align: center;
 }
 
@@ -395,8 +436,8 @@ input {
 }
 
 .products .box-container .box .fa-eye:hover{
-  background-color: black;
-  color:white;
+  background-color: #C1B086;
+  color:rgb(14, 14, 92);
 }
 
 .products .box-container .box img{
@@ -427,48 +468,6 @@ input {
   gap:1rem;
 }
 
-.products .box-container .box .flex .price{
-  margin-right: auto;
-  font-size: 2.5rem;
-  color:black;
-}
-
-.products .box-container .box .flex .price span{
-  font-size: 1.8rem;
-  color:rgb(14, 14, 92);
-}
-
-.products .box-container .box .flex .qty{
-  padding:1rem;
-  font-size: 1.8rem;
-  border: 2rem rgb(14, 14, 92);
-  color:white;
-  width: 7rem;
-}
-
-.products .box-container .box .flex .fa-edit{
-  width: 5rem;
-  background-color: var(--yellow);
-  color:var(--black);
-  cursor: pointer;
-  height: 4.5rem;
-  font-size: 2rem;
-  border:var(--border); 
-}
-
-.products .box-container .box .flex .fa-edit:hover{
-  background-color: var(--black);
-  color:var(--white);
-}
-
-.products .box-container .box .sub-total{
-  margin-top: 1rem;
-  font-size: 1.7rem;
-  color:var(--light-color);
-}
-
-
-
 .products .more-btn a{
   margin-top: 2rem;
   color: white;
@@ -477,6 +476,11 @@ input {
 }
 .products .more-btn a:hover{
   color: rgb(14, 14, 92);
+}
+.title{
+  text-align: center;
+  font-size: 30px;
+  color: #3f9cc1;
 }
 /*---------room paage--------*/
 
