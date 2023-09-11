@@ -54,7 +54,7 @@ body {
 
 
 .logo{
-  color: #fff;
+  color: #C1B086;
   font-size: 30px;
 }
 li {
@@ -101,7 +101,7 @@ header nav {
   height: 3px;
   margin: 5px auto;
   transition: all 0.3s ease-in-out;
-  background-color: #fff;
+  background-color: #C1B086;
 }
 
 header ul {
@@ -117,12 +117,12 @@ header ul li {
 header ul li a {
   font-size: 1.2rem;
   font-weight: 400;
-  color: white;
+  color: #C1B086;
   transition: 0.5s;
 }
 
 header ul li a:hover {
-  color: #C1B086;
+  color: #18056b;
 }
 
 @media only screen and (max-width: 768px) {
@@ -241,9 +241,9 @@ button {
 
 .home .box .text::after {
   position: absolute;
-  content: 'H';
-  font-size: 500px;
-  top: -120%;
+  content: 'BlueMoon';
+  font-size: 120px;
+  top: -25%;
   font-weight: bold;
   opacity: 0.1;
 }
@@ -292,7 +292,7 @@ input {
 }
 
 ::placeholder {
-  color: white;
+  color: #85630e;
 }
 
 .book .search {
@@ -325,7 +325,7 @@ input {
 }
 
 .contact .row form{
-  border:2rem rgb(14, 14, 92);
+  border:0.2rem solid rgb(14, 14, 92);
   flex:1 1 40rem;
   padding:2rem;
   text-align: center;
@@ -333,17 +333,18 @@ input {
 
 .contact .row form h3{
   font-size: 2.5rem;
-  color:#263760;
+  color:#634908;
   text-transform: capitalize;
   margin-bottom: 1rem;
 }
 
 .contact .row form .box{
   width: 100%;
-  border:2rem rgb(14, 14, 92);
+  border:0.2rem solid rgb(14, 14, 92);
+  background-color: #fff;
   padding:1.4rem;
   font-size: 1.8rem;
-  color:#263760;
+  color:#85630e;
   margin:.5rem 0;
 }
 
@@ -357,7 +358,7 @@ input {
 /*---------- gallery page--------*/
 .reviews .slide{
   margin-bottom: 4rem;
-  border: 1.2rem solid rgb(14, 14, 92);
+  border: 0.2rem solid rgb(14, 14, 92);
   text-align: center;
   margin: 5rem;
 }
