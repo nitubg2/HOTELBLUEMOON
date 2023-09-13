@@ -2,13 +2,14 @@
 <html lang="en" dir="ltr">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Website</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-
+    <!--<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />-->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
         integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
@@ -17,70 +18,34 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    <!--<script src="https://code.jquery.com/jquery-1.12.4.min.js"
         integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-<!--  book link start -->
-<link rel="stylesheet" type="text/css" href="style.css" media="all" />
-    <link rel="stylesheet" type="text/css" href="demo.css" media="all" />
-    <!-- jQuery lib from google server ===================== -->
-	<script src="js/jquery-1.7.2.min.js"></script>
-<!--  javaScript -->
-<script>  
-<!--  // building select nav for mobile width only -->
-$(function(){
-	// building select menu
-	$('<select />').appendTo('nav');
-
-	// building an option for select menu
-	$('<option />', {
-		'selected': 'selected',
-		'value' : '',
-		'text': 'Choise Page...'
-	}).appendTo('nav select');
-
-	$('nav ul li a').each(function(){
-		var target = $(this);
-
-		$('<option />', {
-			'value' : target.attr('href'),
-			'text': target.text()
-		}).appendTo('nav select');
-
-	});
-
-	// on clicking on link
-	$('nav select').on('change',function(){
-		window.location = $(this).find('option:selected').val();
-	});
-});
-
-// show and hide sub menu
-$(function(){
-	$('nav ul li').hover(
-		function () {
-			//show its submenu
-			$('ul', this).slideDown(150);
-		}, 
-		function () {
-			//hide its submenu
-			$('ul', this).slideUp(150);			
-		}
-	);
-});
-//end
-</script>
-<!-- end -->
-<!-- book link end -->
+    </script>-->
+    <style>
+        /* ----book now css------ */
+    div button {
+     background-color: #1e90ff; 
+     border: none;
+     color: white;
+     padding: 15px 32px;
+     text-align: center;
+     text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }
+      /*--end book now--*/
+    </style>
+    
 </head>
 
 <body>
-    <header class="header" id="navigation-menu">
+    <header class="header" id ="navigation-menu">
         <div class="container">
             <nav>
-                <h1 class="logo">Hotel Blue <span>Mo<i class="fa-solid fa-moon"></i>n</span></h1>
+                <h1 class="logo">Hotel Blue <br> <span>Mo<i class="fa-solid fa-moon"></i>n</span></h1>
 
                 <ul class="nav-menu">
-                    <li> <a href="index.html" class="nav-link">Home</a> </li>
+                    <li> <a href="home.html" class="nav-link">Home</a> </li>
                     <li> <a href="about.html" class="nav-link">About</a> </li>
                     <li> <a href="room.html" class="nav-link">Rooms</a> </li>
                     <li> <a href="restaurant.html" class="nav-link">Restaurant</a> </li>
@@ -96,7 +61,7 @@ $(function(){
             </nav>
         </div>
     </header>
-    <script>
+   <script>
         const hambuger = document.querySelector('.hambuger');
         const navMenu = document.querySelector('.nav-menu');
 
@@ -125,10 +90,11 @@ $(function(){
                     <p> The BLUE MOON hotel offers a complete experience with common areas that allow you to meet new
                         people in a 
                         unique atmosphere. Lounge area, Ping Pong table, table soccer, darts & Boiler room. </p>
+                        <a href="availability.html"> <button class="form-button" type="submit">Book Now</button></a>
                 </div>
             </div>
             <div class="image">
-                <img src="image/home1.jpg" class="slide">
+                <img src="image/home1.jpg" alt="error" class="slide">
             </div>
             <div class="image_item">
                 <img src="image/home1.jpg" alt="" class="slide active" onclick="img('image/home1.jpg')">
@@ -147,56 +113,7 @@ $(function(){
             const line = document.querySelector('.image');
             line.style.background = change;
         }
-    </script>
-    <!-- book now dropdown button start -->
-    <div class="container">
-		
-            
-        <!-- start header here-->
-       <header>
-           <div id="fdw">
-                   <!--nav-->
-                       <nav>
-                           <ul >
-                               <li>
-                                   <a href="#" class="arr">BOOK NOW<span class="arrow"></span></a>
-                                   <ul style="background-color: rgba(9, 9, 9, 0.598);" class="sub_menu">
-                                       <li class="arrow_top"></li>
-                                       <div class="booking-form">
-                                           
-                                           <form class="boo" action="#">
-                                               <div class="check-date">
-                                                   <label class="dropmenu" for="date-in">Check In</label>
-                                                   <input class="dropbari" type="date" placeholder="Check-in-Date">
-                                                   <i class="icon_calendar"></i>
-                                               </div>
-                                               <div class="check-date">
-                                                   <label class="dropmenu" for="date-out">Check Out</label>
-                                                   <input class="dropbari" type="date" placeholder="Check-out-Date">
-                                                   <i class="icon_calendar"></i>
-                                               </div>
-                                               <div class="select-option">
-                                                   <label class="dropmenu" for="guest">Guests</label>
-                                                       <input class="dropbar" type="number" placeholder="0">
-                                           
-                                               </div>
-                                               <div class="select-option">
-                                                   <label class="dropmenu" for="room">Room</label>
-                                                   <input class="dropbar" type="number" placeholder="0">
-                                               </div>
-                                               <button style="color: rgb(1, 20, 6); background-color: rgb(63, 211, 87); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 15px; border-radius: 5px;" type="submit">Check Availability</button>
-                                           </form>
-                                       </div>
-                                   </ul>
-                               </li>
-                               
-                           </ul>
-                       </nav>
-           </div><!-- end fdw -->
-       </header><!-- end header -->
-       
-   </div>
-    <!-- book now dropdown button end -->
+    </script>    
     <section class="about top" id="about">
         <div class="container flex">
             <div class="left">
@@ -274,7 +191,7 @@ $(function(){
                     <h2>Rooms $ Suites</h2>
                 </div>
                 <div class="button">
-                    <button class="btn1"><a href="room.html">Book Now</a></button>
+                    <button class="btn1"><a href="availability.html">Book Now</a></button>
                 </div>
             </div>
 
@@ -287,7 +204,7 @@ $(function(){
                         <h3>Deluxe Rooms</h3>
                         <p> <span>₹</span>1990 <span>/per night</span> </p>
                         <div class="button">
-                            <button class="btn1"><a href="room.html">Book Now</a></button>
+                            <button class="btn1"><a href="availability.html">Book Now</a></button>
                         </div>
                     </div>
                 </div>
@@ -298,7 +215,7 @@ $(function(){
                     <div class="text">
                         <h3>Suites</h3>
                         <p> <span>₹</span>1690 <span>/per night</span> </p><div class="button">
-                            <button class="btn1"><a href="room.html">Book Now</a></button>
+                            <button class="btn1"><a href="availability.html">Book Now</a></button>
                         </div>
 
                     </div>
@@ -532,18 +449,17 @@ $(function(){
     <footer>
         <div class="container grid top">
             <div class="box">
-                <img
-                    src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/48/000000/external-hotel-hotel-services-and-city-elements-flatart-icons-flat-flatarticons-1.png" />
+                <img src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/48/000000/external-hotel-hotel-services-and-city-elements-flatart-icons-flat-flatarticons-1.png" alt="error"/>
                 <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
                     est
                     laborum.</p>
 
                 <p>Accepted payment methods</p>
                 <div class="payment grid">
-                    <img src="https://img.icons8.com/color/48/000000/visa.png" />
-                    <img src="https://img.icons8.com/color/48/000000/mastercard.png" />
-                    <img src="https://img.icons8.com/color-glass/48/000000/paypal.png" />
-                    <img src="https://img.icons8.com/fluency/48/000000/amex.png" />
+                    <img src="https://img.icons8.com/color/48/000000/visa.png" alt="error" />
+                    <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="error" />
+                    <img src="https://img.icons8.com/color-glass/48/000000/paypal.png" alt="error" />
+                    <img src="https://img.icons8.com/fluency/48/000000/amex.png" alt="error"/>
                 </div>
             </div>
 

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Document</title>
+    <style>
+        header {
+         height: 10vh;
+         background-color:#4682b4;
+        }
+        body{
+            background-image: url('./image/a2.jpg');
+        }
+
+       .logo img {
+         width: 130px;
+         }
+
+        header nav {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-top: 20px;
+           }
+
+        .bar {
+           display: block;
+           width: 25px;
+           height: 3px;
+           margin: 5px auto;
+           transition: all 0.3s ease-in-out;
+           background-color: #fff;
+           }
+
+        header ul {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          }
+
+        header ul li {
+          margin-left: 3rem;
+         list-style: none;
+          }
+
+        header ul li a {
+          font-size: 1.2rem;
+          font-weight: 400;
+          color: white;
+          transition: 0.5s;
+          text-decoration: none;
+          }
+
+        header ul li a:hover {
+           color: #C1B086;
+           }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .booking-form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #b0c4de;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom:10px ;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="tel"] {
+          padding: 5px;
+          width: 400px;
+        }
+        input[type="tel"]::after {
+           content: ' ';
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-address {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-button {
+            width: 100%;
+            padding: 5px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="navigation-menu">
+        <div class="container">
+            <nav>
+                <h1 class="logo">Hotel Blue <span>Mo<i class="fa-solid fa-moon"></i>n</span></h1>
+          
+                  <ul class="nav-menu">
+                    <li> <a href="home.html" class="nav-link">Home</a> </li>
+                    <li> <a href="#about" class="nav-link">About</a> </li>
+                    <li> <a href="#rooms" class="nav-link">Rooms</a> </li>
+                    <li> <a href="#restaurant" class="nav-link">Restaurant</a> </li>
+                    <li> <a href="#gallery" class="nav-link">Gallery</a> </li>
+                    <li> <a href="contact.html" class="nav-link">Contact</a> </li>
+                  </ul>
+                  <div class="hambuger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                  </div>
+                </nav>
+              </div>
+            </header>
+            <script>
+              const hambuger = document.querySelector('.hambuger');
+              const navMenu = document.querySelector('.nav-menu');
+          
+              hambuger.addEventListener("click", mobileMenu);
+          
+              function mobileMenu() {
+                hambuger.classList.toggle("active");
+                navMenu.classList.toggle("active");
+              }
+              
+                const navLink = document.querySelectorAll('.nav-link');
+               navLink.forEach((n) => n.addEventListener("click", closeMenu));
+
+               function closeMenu() {
+               hambuger.classList.remove("active");
+               navMenu.classList.remove("active");
+              }
+            </script>
+
+                <h2 style="color:#f0fff0 ;">book now</h2>
+ 
+        </div>
+    </header>
+            <h1 style="color: #f0fff0;">Hotel Booking Form</h1>
+        <form class="booking-form" action="process_booking.php" method="post">
+           <label class="form-label" for="full-name">Full Name:</label>
+           <input class="form-input" type="text" id="full-name" name="full-name" placeholder="please enter your name" required>
+
+           <label class="form-label" for="email">Email:</label>
+           <input class="form-input" type="email" id="email" name="email" placeholder="please enter your email id" required>
+
+           <label class="phone">Enter your phone number:</label>
+           <input type="tel" id="phone" name="phone" placeholder="please enter your phone number" pattern="[+91]{}">
+
+           <label class="form-label" for="check-in">Check-in Date:</label>
+           <input class="form-input" type="date" id="check-in" name="check-in" required>
+
+           <label class="form-label" for="check-out">Check-out Date:</label>
+           <input class="form-input" type="date" id="check-out" name="check-out" required>
+
+           <label class="form-label" for="room-type">Room Type:</label>
+            <select class="form-input" id="room-type" name="room-type" required>
+                <option value="standard">Standard</option>
+                <option value="deluxe">Deluxe</option>
+                <option value="suite">Suite</option>
+            </select>
+
+           <label class="form-label" for="guests">Number of Guests:</label>
+           <input class="form-input" type="number" id="guests" name="guests" placeholder="please enter your guest number" min="1" required>
+
+           <label class="form-label" for="special-requests">ADDRESS :</label><br>
+           <textarea class="form-address" id="address" name="address" placeholder="please enter your address" rows="5" cols="50"></textarea>
+
+        <button class="form-button" type="submit">Book Now</button>
+    </form>
+</body>
+</html>

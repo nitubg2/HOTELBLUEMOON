@@ -410,12 +410,11 @@ nav{
 
 }
 
-/*--------------book dropdown end--------*/
 /*-------------contact page--------*/
 .contact .row{
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap;--
   gap:1.5rem;
 }
 
