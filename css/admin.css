@@ -76,6 +76,10 @@
     font-weight: bold;
     border: none;
 }
+.home{
+    text-decoration: none;
+    color: #009d63;
+}
 
 @media (min-width: 768px) {
     #sidebar-wrapper {
