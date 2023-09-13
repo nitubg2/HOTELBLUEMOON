@@ -379,7 +379,6 @@ http://www.freshdesignweb.com/drop-down-responsive-menu-with-css3-and-jquery.htm
 
 
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-		/* nav */
 		#fdw nav ul li{
 			margin-left:12px;
 		}
@@ -408,14 +407,14 @@ nav{
     top: 80px;
     right: 50px;
 
-}
+} 
 
 /*--------------book dropdown end--------*/
 /*-------------contact page--------*/
-.contact .row{
+.contact .row {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;--
+  flex-wrap: wrap;
   gap:1.5rem;
 }
 

@@ -18,60 +18,21 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!--<script src="https://code.jquery.com/jquery-1.12.4.min.js"
-        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-<!--  book link start -->
-<link rel="stylesheet" type="text/css" href="style.css" media="all" />
+   
+    <link rel="stylesheet" type="text/css" href="style.css" media="all" />
     <link rel="stylesheet" type="text/css" href="demo.css" media="all" />
-    <!-- jQuery lib from google server ===================== -->
-	<script src="js/jquery-1.7.2.min.js"></script>
-<!--  javaScript -->
-<script>  
-<!--  // building select nav for mobile width only -->
-$(function(){
-	// building select menu
-	$('<select />').appendTo('nav');
-
-	// building an option for select menu
-	$('<option />', {
-		'selected': 'selected',
-		'value' : '',
-		'text': 'Choise Page...'
-	}).appendTo('nav select');
-
-	$('nav ul li a').each(function(){
-		var target = $(this);
-
-		$('<option />', {
-			'value' : target.attr('href'),
-			'text': target.text()
-		}).appendTo('nav select');
-
-	});
-
-	// on clicking on link
-	$('nav select').on('change',function(){
-		window.location = $(this).find('option:selected').val();
-	});
-});
-
-// show and hide sub menu
-$(function(){
-	$('nav ul li').hover(
-		function () {
-			//show its submenu
-			$('ul', this).slideDown(150);
-		}, 
-		function () {
-			//hide its submenu
-			$('ul', this).slideUp(150);			
-		}
-	);
-});
-//end
-</script>
-<!-- end -->
-<!-- book link end -->
+    <style>
+         button {
+               background-color: #1e90ff; 
+               border: none;
+               color: white;
+               padding: 15px 32px;
+               text-align: center;
+               text-decoration: none;
+               display: inline-block;
+               font-size: 16px;
+            }
+    </style>
 </head>
 
 <body>
@@ -133,10 +94,10 @@ $(function(){
                 <img src="image/home1.jpg" alt="error" class="slide">
             </div>
             <div class="image_item">
-                <img src="image/home1.jpg" alt="" class="slide active" onclick="img('image/home1.jpg')">
-                <img src="image/home2.jpg" alt="" class="slide" onclick="img('image/home2.jpg')">
-                <img src="image/home3.jpg" alt="" class="slide" onclick="img('image/home3.jpg')">
-                <img src="image/home4.jpg" alt="" class="slide" onclick="img('image/home4.jpg')">
+                <img src="image/home1.jpg" alt="error" class="slide active" onclick="img('image/home1.jpg')">
+                <img src="image/home2.jpg" alt="error" class="slide" onclick="img('image/home2.jpg')">
+                <img src="image/home3.jpg" alt="error" class="slide" onclick="img('image/home3.jpg')">
+                <img src="image/home4.jpg" alt="error" class="slide" onclick="img('image/home4.jpg')">
             </div>
         </div>
     </section>
@@ -150,61 +111,12 @@ $(function(){
             line.style.background = change;
         }
     </script>
-    <!-- book now dropdown button start -->
-    <div class="container">
-		
-            
-        <!-- start header here-->
-       <header>
-           <div id="fdw">
-                   <!--nav-->
-                       <nav>
-                           <ul >
-                               <li>
-                                   <a href="#" class="arr">BOOK NOW<span class="arrow"></span></a>
-                                   <ul style="background-color: rgba(9, 9, 9, 0.598);" class="sub_menu">
-                                       <li class="arrow_top"></li>
-                                       <div class="booking-form">
-                                           
-                                           <form class="boo" action="#">
-                                               <div class="check-date">
-                                                   <label class="dropmenu" for="date-in">Check In</label>
-                                                   <input class="dropbari" type="date" placeholder="Check-in-Date">
-                                                   <i class="icon_calendar"></i>
-                                               </div>
-                                               <div class="check-date">
-                                                   <label class="dropmenu" for="date-out">Check Out</label>
-                                                   <input class="dropbari" type="date" placeholder="Check-out-Date">
-                                                   <i class="icon_calendar"></i>
-                                               </div>
-                                               <div class="select-option">
-                                                   <label class="dropmenu" for="guest">Guests</label>
-                                                       <input class="dropbar" type="number" placeholder="0">
-                                           
-                                               </div>
-                                               <div class="select-option">
-                                                   <label class="dropmenu" for="room">Room</label>
-                                                   <input class="dropbar" type="number" placeholder="0">
-                                               </div>
-                                               <button style="color: rgb(1, 20, 6); background-color: rgb(63, 211, 87); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 15px; border-radius: 5px;" type="submit">Check Availability</button>
-                                           </form>
-                                       </div>
-                                   </ul>
-                               </li>
-                               
-                           </ul>
-                       </nav>
-           </div><!-- end fdw -->
-       </header><!-- end header -->
-       
-   </div>
-    <!-- book now dropdown button end -->
     <section class="about top" id="about">
         <div class="container flex">
             <div class="left">
                 <div class="img">
-                    <img src="image/a1.jpg" alt="" class="image1">
-                    <img src="image/a2.jpg" alt="" class="image2">
+                    <img src="image/a1.jpg" alt="error" class="image1">
+                    <img src="image/a2.jpg" alt="error" class="image2">
                 </div>
             </div>
             <div class="right">
