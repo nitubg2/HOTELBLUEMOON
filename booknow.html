@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>book now page</title>
+    <style>
+     header
+      {
+         height: 15vh;
+         background-color:  #f5deb305;
+      }
+      body{
+        background-image: url('./image/home1.jpg');
+      }
+
+      .logo img {
+          width: 130px;
+      }
+
+      header nav {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-top: 20px;
+      }
+
+      .nav {
+         display: block;
+         width: 25px;
+         height: 3px;
+         margin: 5px auto;
+         transition: all 0.3s ease-in-out;
+         background-color: #fff;
+      }
+      header ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      header ul li {
+         margin-left: 3rem;
+         list-style: none;
+      }
+
+      header ul li a {
+         font-size: 1.2rem;
+         font-weight: 400;
+         color: white;
+         transition: 0.5s;
+         text-decoration: none;
+      }
+
+      header ul li a:hover {
+         color: #C1B086;
+      }
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+      /*- CHECK ROOM AVAILABILITY from  CSS start--*/
+      h1 {
+              text-align: center;
+              color: #dbdae0;
+            }
+      .container1{
+          max-width: 400px;
+          margin: auto;
+          padding: 20px;
+          border: 2px solid #200365;
+          border-radius: 5px;
+          box-shadow: 15px 15px 15px #24044e;
+          background-color:  #b0c4de02;
+      }
+      .form-group {
+               margin-bottom: 20px;
+               margin: 20px;
+      }
+      label {
+          display: block;
+          font-weight: bold;
+          color: #fcf9f9;
+      }
+      ::placeholder {
+       color:#111111;
+      }
+      button {
+        display: block;
+        width: 100%;
+        padding: 20px;
+        margin: 8px;
+        background-color: #030e50;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        }
+        button:hover {
+          background-color: #0056b3;
+        }
+   </style>
+</head>
+<body>
+   <header class="header" id="navigation-menu">
+        
+            <nav>
+               <h1 class="logo">Hotel Blue <span>Mo<i class="fa-solid fa-moon"></i>n</span></h1>
+             
+          
+               <ul class="nav-menu">
+                  <li> <a href="home.html" class="nav-link">Home</a> </li>
+                  <li> <a href="about.html" class="nav-link">About</a> </li>
+                  <li> <a href="room.html" class="nav-link">Rooms</a> </li>
+                  <li> <a href="#restaurant" class="nav-link">Restaurant</a> </li>
+                  <li> <a href="gallery.html" class="nav-link">Gallery</a> </li>
+                  <li> <a href="contact.html" class="nav-link">Contact</a> </li>
+               </ul>
+               <div class="hambuger">
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+               </div>
+            </nav>
+    
+   </header>
+   <!--from start-->
+      <div class="container1">   
+          <h1 style="color: #f0fff0;">Hotel Booking Form</h1>
+        <from id="booking-form">
+          <div class="form-group">
+            <label class="form-label" for="full-name">Full Name:</label>
+            <input class="form-input" type="name" id="full-name" name="full-name" placeholder="please enter your name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email:</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="please enter your email id" required>
+          </div>
+          <div class="form-group"> 
+            <label class="from-label">Enter your phone number:</label>
+            <input type="from-input" type="tel" id="phone" name="phone" placeholder="please enter your phone number" required>
+          </div>
+          <div class="form-group"> 
+            <label class="form-label" for="check-in">Check-in Date:</label>
+            <input class="form-input" type="date" id="check-in" name="check-in" required>
+          </div>
+          <div class="form-group"> 
+            <label class="form-label" for="check-out">Check-out Date:</label>
+            <input class="form-input" type="date" id="check-out" name="check-out" required>
+          </div>
+          <div class="form-group"> 
+            <label class="form-label" for="room-type">Room Type:</label>
+            <select class="form-input" id="room-type" name="room-type" required>
+              <option value="standard">Standard</option>
+              <option value="deluxe">Deluxe</option>
+              <option value="suite">Suite</option>
+              <option value="suite">premire</option>
+              <option value="suite">super view</option>
+              <option value="suite">luxuary room</option>
+              <option value="suite">supirior</option>
+            </select>
+          </div>
+          <div class="form-group"> 
+            <label class="form-label" for="guests">Number of Guests:</label>
+            <input class="form-input" type="number" id="guests" name="guests" placeholder="enter your guestnumber" min="1" required>
+          </div>
+          <div class="form-group"> 
+            <label class="form-label" for="special-requests">ADDRESS :</label><br>
+            <textarea class="form-address" id="address" name="address" placeholder="please enter your address" rows="5" cols="50"></textarea>
+          </div> 
+             <button class="form-button" type="submit"> <a href="payment.html"> Book Now </a></button>
+        </from>    
+      </div>
+      <!--from end-->
+</body>
+</html>
