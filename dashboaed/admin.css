@@ -94,3 +94,10 @@
     #wrapper.toggled #sidebar-wrapper {
         margin-left: -15
     }
+
+
+    /* about section start */
+
+.aboutbox{
+    padding: 50px;
+}
