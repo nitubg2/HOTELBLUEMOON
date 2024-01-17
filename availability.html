@@ -185,18 +185,18 @@
       <div class="container1"> 
          <!--from start--> 
          <h2 style="color:#f0fff0";>CHECK ROOM AVAILABILITY</h2>
-         <form id="availability"> 
+         <div id="availability"> 
             <div class="form-group">
                <label class="form-label" for="check-in">Check-in Date:</label>
-               <input class="form-input" type="date" id="check-in" name="check-in" required>
+               <input class="form-input" type="date" id="idate"  required>
             </div>
             <div class="form-group">
                <label class="form-label" for="check-out">Check-out Date:</label>
-               <input class="form-input" type="date" id="check-out" name="check-out" required>
+               <input class="form-input" type="date" id="odate"  required>
             </div>
             <div class="form-group">
                <label class="form-label" for="room-type">Room Type:</label>
-               <select class="form-input" id="room-type" name="room-type" required>
+               <select class="form-input" id="room-type" required>
                   <option value="standard">Standard</option>
                   <option value="deluxe">Deluxe</option>
                   <option value="suite">Suite</option>
@@ -208,13 +208,79 @@
             </div>
             <div class="form-group">
                <label class="form-label" for="guests">Number of Guests:</label>
-               <input class="form-input" type="number" id="guests" name="guests" placeholder="please enter guest number" min="1" required>
+               <input class="form-input" type="number" id="guests" placeholder="please enter guest number" min="1" required>
             </div>
          
-            <button class="btn1"><a href="booknow.html">CHECK AVAILABILITY</a></button>
-         </form>
+            <button class="btn1" onclick="book()"><a href="#">CHECK AVAILABILITY</a></button>
+         </div>
       </div>
        <!--from end-->
-      </header>
+     
+
+      <script>
+         function book(){
+             
+             let idate=document.getElementById("idate").value;
+             console.log("idate",idate)
+                 
+             let odate=document.getElementById("odate").value;
+             console.log("odate",odate)
+            let room_type=document.getElementById("room-type").value;
+            console.log("room-type",room_type)
+             var guest=document.getElementById("guests").value;
+             console.log("guests",guest)
+             let data={
+               "idate": idate,
+               "odate" : odate,
+               "nog" : guest,
+               "room_type" : room_type
+             }
+             fetch('http://localhost/api/room_booking.php', {
+    method: "POST",
+    // Set the headers
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    // Set the post data
+    body: JSON.stringify(data)
+})
+.then(function (response) {
+    // Save the response status in a variable to use later.
+    fetch_status = response.status;
+    console.log(response)
+    // Handle success
+    // eg. Convert the response to JSON and return
+    return response.json();
+}) 
+.then(function (json) {
+    // Check if the response were success
+    if (fetch_status == 200) {
+        // Use the converted JSON
+        console.log(json);
+        if(json.msg==0){
+            alert("Login unsuccessful")
+        }
+        else if(json.msg==-1){
+            alert("Room not available")
+        }
+        else {
+            alert("Room available , Fill in your details")
+            localStorage.setItem("data",JSON.stringify(data))
+           window.location.href="/booknow.html"
+        }
+    }
+})
+.catch(function (error){
+    // Catch errors
+    console.log(error);
+}); 
+           
+         }
+       </script>
+
+
+
+
    </body>
 </html>

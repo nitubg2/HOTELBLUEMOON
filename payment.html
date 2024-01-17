@@ -153,23 +153,41 @@
             <form id="payment-form">
                 <div class="form-group">
                     <label for="card-number">Card Number:</label>
-                    <input type="text" id="card-number" name="card-number" placeholder="0000 0000 0000 " required>
+                    <input type="number" id="cnumber" name="card-number" placeholder="0000 0000 0000 " required>
                 </div>
                 <div class="form-group">
                      <label for="expiration-date">Expiration Date:</label>
-                     <input type="text" id="expiration-date" name="expiration-date" placeholder="MM/YY" required>
+                     <input type="date" id="date" name="expiration-date" placeholder="MM/YY" required>
                 </div>
                 <div class="form-group">
                     <label for="cvv">CVV:</label>
-                    <input type="text" id="cvv" name="cvv" placeholder="000" required>
+                    <input type="number" id="cvv" name="cvv" placeholder="000" required>
                 </div>
                 <div class="form-group">
                      <label for="name">Cardholder Name:</label>
                     <input type="text" id="name" name="name" placeholder="please enter cardholder name" required>
                 </div>
-                <button type="submit">Submit Payment</button>
+                <button type="submit" onclick="submit()">Submit Payment</button>
             </form>
         </div>
         <!--from end-->
+
+<script>
+  function submit(){
+    let cnumber=document.getElementById("cnumber").value;
+     console.log("cnumber",cnumber)
+
+     let date=document.getElementById("date").value;
+     console.log("date",date)
+        
+     let cvv=document.getElementById("cvv").value;
+     console.log("cvv",cvv)
+          
+     var name=document.getElementById("name");
+     console.log("name",name.value)
+           
+  }
+</script>
+
     </body>
 </html>

@@ -160,12 +160,12 @@
         </div>
     </header>
             <h1 style="color: #f0fff0;">Hotel Booking Form</h1>
-        <form class="booking-form" action="process_booking.php" method="post">
+        <form class="booking-form" method="post">
            <label class="form-label" for="full-name">Full Name:</label>
            <input class="form-input" type="text" id="full-name" name="full-name" placeholder="please enter your name" required>
 
            <label class="form-label" for="email">Email:</label>
-           <input class="form-input" type="email" id="email" name="email" placeholder="please enter your email id" required>
+           <input class="form-input" type="email" id="mail" name="email" placeholder="please enter your email id" required>
 
            <label class="phone">Enter your phone number:</label>
            <input type="tel" id="phone" name="phone" placeholder="please enter your phone number" pattern="[+91]{}">
@@ -189,7 +189,31 @@
            <label class="form-label" for="special-requests">ADDRESS :</label><br>
            <textarea class="form-address" id="address" name="address" placeholder="please enter your address" rows="5" cols="50"></textarea>
 
-        <button class="form-button" type="submit">Book Now</button>
+        <button class="form-button" type="submit" onclick="book()">Book Now</button>
     </form>
+
+<script>
+  function booK(){
+      var msg=document.getElementById("mail");
+      console.log("mail",msg.value)
+        
+     let number=document.getElementById("phone").value;
+      console.log("phone",number)
+
+      let in_date=document.getElementById("check-in").value;
+      console.log("check-in",in_date)
+          
+      let out_date=document.getElementById("check-out").value;
+      console.log("check-out",out_date)
+
+      let guest=document.getElementById("guests").value;
+      console.log("guests",guest)
+
+     var name=document.getElementById("full-name");
+      console.log("full-name",name.value)
+  }
+</script>
+
+
 </body>
 </html>

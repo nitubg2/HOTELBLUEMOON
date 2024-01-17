@@ -310,10 +310,11 @@
   <div class="animated bounceInDown">
     <div class="container">
       <span class="error animated tada" id="msg"></span>
-      <form name="form1" class="box" onsubmit="return checkStuff()">
+      <!-- <form name="form1" class="box" onsubmit="return checkStuff()">  -->
+        <div class="box">
         <h4>WELCOME TO OUR HOTEL</h4>
         <h5>Sign in to your account</h5>
-        <input type="text" name="email" placeholder="Email" autocomplete="off">
+        <input type="text" placeholder="Email" id="mail" autocomplete="off">
         <i class="typcn typcn-eye" id="eye"></i>
         <input type="password" name="password" placeholder="Passsword" id="pwd" autocomplete="off">
         <label>
@@ -322,14 +323,70 @@
           <small class="rmb">Remember me</small>
         </label>
         <a href="#" class="forgetpass">Forget Password?</a>
-        <input type="submit" value="Sign in" class="btn1">
-      </form>
+        <input type="submit" onclick="submit()"value="Sign in" class="btn1">
+      <!-- </form>  -->
       <a href="register1.html" class="dnthave">Don’t have an account? Register</a>
     </div>
-    <div class="footer">
-
-    </div>
+    
   </div>
+
+<script>
+  function submit(){
+    var name=document.getElementById("mail").value;
+    //console.log("maiL",msg.value)
+ 
+   let password=document.getElementById("pwd").value;
+    //console.log("pwd",password)
+    let data={
+                "username" : name,
+                "password" : password
+              }
+    console.log(data)
+    fetch('http://localhost/api/login.php', {
+    method: "POST",
+    // Set the headers
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    // Set the post data
+    body: JSON.stringify(data)
+})
+.then(function (response) {
+    // Save the response status in a variable to use later.
+    fetch_status = response.status;
+    console.log(response)
+    // Handle success
+    // eg. Convert the response to JSON and return
+    return response.json();
+}) 
+.then(function (json) {
+    // Check if the response were success
+    if (fetch_status == 200) {
+        // Use the converted JSON
+        console.log(json);
+        if(json.msg==0){
+            alert("Login unsuccessful")
+        }
+        else if(json.msg==-1){
+            alert("Username or password Wrong")
+        }
+        else {
+            alert("Login success")
+            window.location.href="/dashboard/"
+        }
+    }
+})
+.catch(function (error){
+    // Catch errors
+    console.log(error);
+}); 
+
+
+
+  }
+</script>
+
 </body>
 
 </html>

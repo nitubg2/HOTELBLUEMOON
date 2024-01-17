@@ -103,7 +103,80 @@
         }
    </style>
 </head>
-<body>
+<script>
+ function populatedata(){
+    let data=JSON.parse(localStorage.getItem("data"))
+    document.getElementById("check-in").value=data.idate
+    document.getElementById("check-out").value=data.odate
+    document.getElementById("guests").value=data.nog
+    document.getElementById("room-type").value=data.room_type
+  }
+  function booknow(){
+    let idate=document.getElementById("check-in").value
+   let odate= document.getElementById("check-out").value
+    let nog= document.getElementById("guests").value
+    let room_type=document.getElementById("room-type").value
+
+    let fname=document.getElementById("full-name").value
+    let phone=document.getElementById("phone").value
+    let email=document.getElementById("email").value
+    let address=document.getElementById("address").value
+
+
+    let data={
+               "idate": idate,
+               "odate" : odate,
+               "nog" : nog,
+               "room_type" : room_type,
+               "fname" :fname,
+               "phone" : phone,
+               "email":email,
+               "address":address
+             }
+
+             fetch('http://localhost/api/room_book.php', {
+    method: "POST",
+    // Set the headers
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    // Set the post data
+    body: JSON.stringify(data)
+})
+.then(function (response) {
+    // Save the response status in a variable to use later.
+    fetch_status = response.status;
+    console.log(response)
+    // Handle success
+    // eg. Convert the response to JSON and return
+    return response.json();
+}) 
+.then(function (json) {
+    // Check if the response were success
+    if (fetch_status == 200) {
+        // Use the converted JSON
+        console.log(json);
+        if(json.msg==0){
+            alert("Login unsuccessful")
+        }
+        else if(json.msg==-1){
+            alert("Room not booked")
+        }
+        else {
+            alert("Room Booked")
+            //localStorage.setItem("data",JSON.stringify(data))
+           //window.location.href="/booknow.html"
+        }
+    }
+})
+.catch(function (error){
+    // Catch errors
+    console.log(error);
+}); 
+  }
+</script>
+<body onload="populatedata()">
    <header class="header" id="navigation-menu">
         
             <nav>
@@ -144,15 +217,15 @@
           </div>
           <div class="form-group"> 
             <label class="form-label" for="check-in">Check-in Date:</label>
-            <input class="form-input" type="date" id="check-in" name="check-in" required>
+            <input disabled class="form-input" type="date" id="check-in" name="check-in" required>
           </div>
           <div class="form-group"> 
             <label class="form-label" for="check-out">Check-out Date:</label>
-            <input class="form-input" type="date" id="check-out" name="check-out" required>
+            <input disabled class="form-input" type="date" id="check-out" name="check-out" required>
           </div>
           <div class="form-group"> 
             <label class="form-label" for="room-type">Room Type:</label>
-            <select class="form-input" id="room-type" name="room-type" required>
+            <select disabled class="form-input" id="room-type" name="room-type" required>
               <option value="standard">Standard</option>
               <option value="deluxe">Deluxe</option>
               <option value="suite">Suite</option>
@@ -164,13 +237,13 @@
           </div>
           <div class="form-group"> 
             <label class="form-label" for="guests">Number of Guests:</label>
-            <input class="form-input" type="number" id="guests" name="guests" placeholder="enter your guestnumber" min="1" required>
+            <input class="form-input" disabled type="number" id="guests" name="guests" placeholder="enter your guestnumber" min="1" required>
           </div>
           <div class="form-group"> 
             <label class="form-label" for="special-requests">ADDRESS :</label><br>
             <textarea class="form-address" id="address" name="address" placeholder="please enter your address" rows="5" cols="50"></textarea>
           </div> 
-             <button class="form-button" type="submit"> <a href="payment.html"> Book Now </a></button>
+             <button class="form-button" type="button" onclick="booknow()"> <a href="#"> Book Now </a></button>
         </from>    
       </div>
       <!--from end-->

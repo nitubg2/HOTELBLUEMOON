@@ -23,33 +23,91 @@
         <div class="wrapper">
             <div class="form-box register">
                 <h2>Registration</h2>
-                <form action="#">
+                <!-- <form action="#"> -->
                     <div class="input-box">
                         <span class="icon"><ion-icon name="person"></ion-icon></span>
-                        <input type="text" required>
+                        <input type="text" id="uname" required>
                         <label>Username</label>
                     </div>
                     <div class="input-box">
                         <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                        <input type="email" required>
+                        <input type="email" id="mail" required>
                         <label>Email</label>
                     </div>
                     <div class="input-box">
                         <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                        <input type="password" required>
+                        <input type="password" id="pwd" required>
                         <label>Password</label>
                     </div>
                     <div class="remember-forgot">
                         <label><input type="checkbox"> I agree to the terms & conditions</label>
                        
                     </div>
-                    <button type="submit" class="btn">Register</button>
+                    <button type="submit" class="btn" onclick="submit()">Register</button>
                     <div class="login-register">
                         <p>Already have an account?<a href="login.html" class="login-link"> login</a></p> 
                     </div>
-                </form>
+                <!-- </form> -->
             </div>
         </div>
+        <script>
+            function submit(){
+            //   var msg=document.getElementById("mail").va;
+            //   console.log("mail",msg)
+        
+             let password=document.getElementById("pwd").value;
+              console.log("pwd",password)
+          
+             var name=document.getElementById("uname").value;
+              console.log("uname",name)
+              let data={
+                "username" : name,
+                "password" : password
+              }
+        /// API call      
+              fetch('http://localhost/api/register.php', {
+    method: "POST",
+    // Set the headers
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    // Set the post data
+    body: JSON.stringify(data)
+})
+.then(function (response) {
+    // Save the response status in a variable to use later.
+    fetch_status = response.status;
+    console.log(response)
+    // Handle success
+    // eg. Convert the response to JSON and return
+    return response.json();
+}) 
+.then(function (json) {
+    // Check if the response were success
+    if (fetch_status == 200) {
+        // Use the converted JSON
+        console.log(json);
+        if(json.msg==0){
+            alert("Registration unsuccessful")
+        }
+        else if(json.msg==-1){
+            alert("Registration unsuccessful, Username already exists")
+        }
+        else {
+            alert("Registration success")
+            window.location.href="/login.html"
+        }
+    }
+})
+.catch(function (error){
+    // Catch errors
+    console.log(error);
+}); 
+
+
+            }
+          </script>
         <script src="register1.js"></script>
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
