@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/feed.css">
+    <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Feedback form</title>
+</head>
+<body>
+    <header class="header" id="navigation-menu">
+        <div class="container">
+            <nav>
+                <h1 class="logo">Hotel Blue <span>Mo<i class="fa-solid fa-moon"></i>n</span></h1>
+
+                <ul class="nav-menu">
+                    <li> <a href="home.html" class="nav-link">Home</a> </li>
+                    <li> <a href="about.html" class="nav-link">About</a> </li>
+                    <li> <a href="room.html" class="nav-link">Rooms</a> </li>
+                    <li> <a href="resturant.html" class="nav-link">Resturant</a> </li>
+                    <li> <a href="gallery.html" class="nav-link">Gallery</a> </li>
+                    <li> <a href="contact.html" class="nav-link">Contact</a> </li>
+                    <li> <a href="account.html" class="nav-link">log-in</a> </li>
+                </ul>
+
+                <div class="hambuger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+              
+        </div>
+    </header>
+    <script>
+        const hambuger = document.querySelector('.hambuger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hambuger.addEventListener("click", mobileMenu);
+
+        function mobileMenu() {
+            hambuger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        const navLink = document.querySelectorAll('.nav-link');
+        navLink.forEach((n) => n.addEventListener("click", closeMenu));
+
+        function closeMenu() {
+            hambuger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }
+    </script>
+    
+    <div class="bg-image"></div>
+    
+    
+    <div class="bg-text">
+        <div class="form">
+            <h1>Feedback Form</h1>
+            <fieldset>
+                <legend>Personal Information</legend>
+                <table>
+                    <tr>
+                        <td><label for="name" id="name-label">Name:</label></td>
+                        <td><input type="text" id="name" name="user_name" placeholder="Enter Your Name" required></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="address">Address:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="user_address" id="address" placeholder="Enter your address">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="email">Email: </label>
+                        </td>
+                        <td>
+                            <input type="email" id="email" name="user_name" placeholder="Enter your email" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="phone">Phone: </label>
+                        </td>
+                        <td>
+                            <input type="tel" id="phone" name="user_phone" placeholder="Enter contact Number">
+                        </td>
+                    </tr>
+                   
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <div>
+                    <label for="dept">Ratings: </label>
+
+                    <select id="dept">
+                        <option value="#"><i class="fa fa-star" aria-hidden="true"></i></option>
+                        <option value="dept2">Department #2</option>
+                        <option value="dept3">Department #3</option>
+                        <option value="dept4">Department #4</option>
+                    </select>
+                    &nbsp; &nbsp; &nbsp; &nbsp;
+                    <label for="status">Online Status:</label>
+                    <select name="O_status" id="status">
+                        <option value="online">Online</option>
+                        <option value="ofline">Ofline</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Your Feedback</legend>
+                <div>
+                    <textarea
+                    id="msg"
+                    name="user_msg"
+                    rows="8"
+                    cols="40"
+                    placeholder="Enter your message"></textarea>
+                </div>
+            </fieldset>
+               
+            <div id="submitbutton">
+                <button type="submit" id="submit">Submit your feedback</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
